@@ -1,9 +1,9 @@
 {
-  "name": "mngads-private-cordova-plugin",
+  "name": "cordova-plugin-madvertise-sdk",
   "version": "3.2.0",
   "description": "Cordova plugin for the Mng Ads SDK",
   "cordova": {
-    "id": "com.mngads.mngads-sdk-plugin",
+    "id": "cordova-plugin-madvertise-sdk",
     "platforms": [
       "ios",
       "android"
@@ -13,7 +13,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/mngcorp/mngads-private-cordova-plugin.git"
+    "url": "git+https://github.com/WGMB/cordova-plugin-madvertise-sdk.git"
   },
   "keywords": [
     "ecosystem:cordova",
