@@ -1,0 +1,32 @@
+{
+  "name": "mngads-private-cordova-plugin",
+  "version": "3.2.0",
+  "description": "Cordova plugin for the Mng Ads SDK",
+  "cordova": {
+    "id": "com.mngads.mngads-sdk-plugin",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/mngcorp/mngads-private-cordova-plugin.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "",
+  "license": "BSD",
+  "homepage": "https://bitbucket.org/mngcorp/mngads-private-cordova-plugin#readme"
+}

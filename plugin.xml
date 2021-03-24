@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.mngads.mngads-sdk-plugin"
+    version="3.0.0">
+
+    <name>Mng Ads SDK Plugin</name>
+    <description>Cordova plugin for the Mng Ads SDK</description>
+    <author>Hsan Trimech And Belkahla Anoir</author>
+    <license>BSD</license>
+
+    <engines>
+        <engine name="cordova" version=">=3.1.0" />
+    </engines>
+
+    <js-module src="www/mngads.js" name="MngAdsSDK">
+        <clobbers target="MngAdsSDK" />
+    </js-module>
+
+    <access origin="*" />
+
+    <!-- iOS -->
+    <platform name="ios">
+
+        <config-file target="config.xml" parent="/*">
+          <feature name="MngAdsSDK">
+            <param name="ios-package" value="CDVMngAdsSDK"/>
+          </feature>
+        </config-file>
+        <podspec>
+              
+                <pods use-frameworks="true">
+                    <pod name="BlueStack-SDK/MAdvertiseLocation" spec=">=3.2.0" />
+                    <pod name="BlueStack-SDK/Google-Mobile-Ads-SDK" spec=">=3.2.0" />
+                    <pod name="BlueStack-SDK/FlurryAds" spec=">=3.2.0" />
+                    <pod name="BlueStack-SDK/mopub-ios-sdk" spec=">=3.2.0" />
+                    <pod name="BlueStack-SDK/AppLovinSDK" spec=">=3.2.0" />
+                    <pod name="BlueStack-SDK/OguryAds" spec=">=3.2.0" />
+                    <pod name="BlueStack-SDK/Smart-Display-SDK" spec=">=3.2.0" />
+                    <pod name="BlueStack-SDK/AmazonPublisherServicesSDK" spec=">=3.2.0" />
+                    <pod name="BlueStack-SDK/FBAudienceNetwork" spec=">=3.2.0" />
+
+                </pods>
+                
+           </podspec>
+<!--        <framework src="BlueStack-SDK/MAdvertiseLocation" type="podspec" spec=">=3.2.0" />-->
+<!--        <framework src="BlueStack-SDK/Google-Mobile-Ads-SDK" type="podspec" spec=">=3.2.0" />-->
+<!--        <framework src="BlueStack-SDK/FlurryAds" type="podspec" spec=">=3.2.0" />-->
+<!--        <framework src="BlueStack-SDK/mopub-ios-sdk" type="podspec" spec=">=3.2.0" />-->
+<!--        <framework src="BlueStack-SDK/AppLovinSDK" type="podspec" spec=">=3.2.0" />-->
+<!--        <framework src="BlueStack-SDK/OguryAds" type="podspec" spec=">=3.2.0" />-->
+<!--        <framework src="BlueStack-SDK/Smart-Display-SDK" type="podspec" spec=">=3.2.0" />-->
+<!--        <framework src="BlueStack-SDK/AmazonPublisherServicesSDK" type="podspec" spec=">=3.2.0" />-->
+<!--        <framework src="BlueStack-SDK/FBAudienceNetwork" type="podspec" spec=">=3.2.0" />-->
+<!---->
+<!--        -->
+        <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
+            <dict>
+                <key>NSAllowsArbitraryLoads</key>
+                <true/>
+            </dict>
+        </config-file>
+        
+        <config-file target="*-Info.plist" parent="MinimumOSVersion">
+            <string>10.0</string>
+        </config-file>
+        
+        <config-file target="*-Info.plist" parent="GADIsAdManagerApp">
+            <true/>
+        </config-file>
+       
+        <config-file target="*-Info.plist" parent="SKAdNetworkItems">
+            <array>
+                <dict>
+                    <key>SKAdNetworkIdentifier</key>
+                    <string>pd25vrrwzn.skadnetwork</string>
+                </dict>
+                <dict>
+                    <key>SKAdNetworkIdentifier</key>
+                    <string>hs6bdukanm.skadnetwork</string>
+                </dict>
+                <dict>
+                    <key>SKAdNetworkIdentifier</key>
+                    <string>v9wttpbfk9.skadnetwork</string>
+                </dict>
+                <dict>
+                    <key>SKAdNetworkIdentifier</key>
+                    <string>n38lu8286q.skadnetwork</string>
+                </dict>
+                <dict>
+                    <key>SKAdNetworkIdentifier</key>
+                    <string>cstr6suwn9.skadnetwork</string>
+                </dict>
+                <dict>
+                    <key>SKAdNetworkIdentifier</key>
+                    <string>4pfyvq9l8r.skadnetwork</string>
+                </dict>
+                <dict>
+                    <key>SKAdNetworkIdentifier</key>
+                    <string>p78axxw29g.skadnetwork</string>
+                </dict>
+            </array>
+        </config-file>
+       
+        <!-- Plugin -->
+        <header-file src="src/ios/CDVMngAdsSDK.h"/>
+        <source-file src="src/ios/CDVMngAdsSDK.m" />
+
+
+    </platform>
+
+    <!-- Android -->
+    <platform name="android">
+
+
+        <edit-config file="app/src/main/AndroidManifest.xml" target="/manifest/application" mode="merge">
+         <application android:name="androidx.multidex.MultiDexApplication" />
+        </edit-config>
+
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application" >
+        <!--This embeds the version of Google Play services that the app was compiled with.. -->
+            <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version" />
+        </config-file>  
+
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application" >
+               <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true"/>
+        </config-file>  
+
+
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest" >
+            <!-- External storage is used for pre-caching features if available -->
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <!-- Grants the SDK permission to create windows using the type TYPE_SYSTEM_ALERT, shown on top of all other apps. -->
+            <!-- this permission is required for Debug Mode with Gyroscope Sensor. -->
+            <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        </config-file>
+
+
+        <config-file target="res/xml/config.xml" parent="/*" >
+          <feature name="MngAdsSDK">
+            <param name="android-package" value="com.mngads.cordova.CDVMngAdsSDK" />
+            <param name="onload" value="true" />
+          </feature>
+        </config-file>
+
+        <framework src="src/android/gradle/build.gradle" custom="true" type="gradleReference" />
+        <framework src="build-extras.gradle" custom="true" type="gradleReference" />
+
+
+        <source-file src="src/android/CDV/CDVMngAdsSDK.java" target-dir="src/com/mngads/cordova" />
+    
+
+    </platform>
+
+</plugin>

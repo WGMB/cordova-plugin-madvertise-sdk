@@ -1,0 +1,71 @@
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.3'
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+
+        // Enabling multidex support.
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi-v7a","x86"
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+}
+
+
+
+repositories {
+        jcenter()
+        flatDir{
+            dirs '../app/src/main/libs'
+        }
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        google()
+/*
+           //For SmartAdServer configuration 
+        maven {  
+           url 'https://packagecloud.io/smartadserver/android/maven2'  
+        }*/
+
+        maven {
+             credentials {
+                username "madvertise-maven"
+                password "GpdGZ9GE9SK7ByWdM987"
+            }
+             url "https://api.bitbucket.org/2.0/repositories/mngcorp/deploy-maven-bluestack/src/master"
+             authentication {
+                basic(BasicAuthentication)
+            }
+        }
+
+    }
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.gms:play-services-base:17.5.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
+    implementation 'com.madvertise:bluestack-core-sdk:3.3.3'
+    implementation 'com.android.support:multidex:1.0.3'
+
+    // DFP SDK
+    implementation 'com.google.android.gms:play-services-ads:19.5.0'
+/*
+    // Audience SDK
+    implementation 'com.facebook.android:audience-network-sdk:6.2.0'
+
+    // Smart Display SDK
+    implementation 'com.smartadserver.android:smart-display-sdk:7.6.2@aar'
+    implementation 'com.smartadserver.android:smart-core-sdk:7.6.2@aar'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.google.android.exoplayer:exoplayer:2.11.0'*/
+}
