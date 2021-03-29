@@ -1,4 +1,4 @@
-cordova.define("com.mngads.mngads-sdk-plugin.MngAdsSDK", function(require, exports, module) {
+cordova.define("cordova-plugin-madvertise-sdk.MngAdsSDK", function(require, exports, module) {
 var argscheck = require('cordova/argscheck'),
     utils = require('cordova/utils'),
     exec = require('cordova/exec');
