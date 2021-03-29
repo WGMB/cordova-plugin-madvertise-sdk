@@ -23,6 +23,8 @@
     int height;
     NSString *position;
     BOOL autoDisplay;
+    BOOL withBorder;
+
 }
 
 - (void)pluginInitialize {
@@ -188,6 +190,9 @@
             self->height = mheight;
             self->position = [arguments objectAtIndex:2];
             self->autoDisplay = [[arguments objectAtIndex:3]boolValue];
+            if (arguments.count == 6) {
+                self->withBorder = [[arguments objectAtIndex:5]boolValue];
+            }
         }
     });
     
@@ -233,16 +238,19 @@
     CGRect frame;
     CGFloat screenWidth = [self screenWidth];
     CGFloat topPadding = 20;
-    
+    int width = [self screenWidth];
+    if (banner.frame.size.width != 0) {
+        width = banner.frame.size.width ;
+    }
     if (@available(iOS 11.0, *)) {
         UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
         topPadding = window.safeAreaInsets.top;
     }
     if (height ==250) {
-        frame = CGRectMake((screenWidth - 300)/2, topPadding, 300, height);
-    }else{
-        frame = CGRectMake(0, topPadding, screenWidth, height);
+        width = 300 ;
     }
+    frame = CGRectMake((screenWidth - width)/2, topPadding, width, height);
+
     banner.frame = frame;
     [self.webView addSubview:banner];
     
@@ -253,6 +261,9 @@
     CGFloat screenWidth = [self screenWidth];
     CGFloat y = [self screenHeight] - height;
     int width = [self screenWidth];
+    if (banner.frame.size.width != 0) {
+        width = banner.frame.size.width ;
+    }
     CGFloat bottomPadding = 0;
     
     if (@available(iOS 11.0, *)) {
@@ -261,10 +272,9 @@
     }
     if (height ==250) {
         width = 300;
-        frame = CGRectMake((screenWidth - width)/2, y - bottomPadding, width, height);
-    }else{
-        frame = CGRectMake(0, y - bottomPadding, screenWidth, height);
     }
+    frame = CGRectMake((screenWidth-width)/2, y - bottomPadding,width , height);
+
     banner.frame = frame;
     [self.webView addSubview:banner];
     
@@ -287,6 +297,13 @@
     }
     
     banner = adView;
+    if (withBorder) {
+        banner.layer.borderColor = [UIColor blackColor].CGColor;
+        banner.layer.borderWidth = 1.0f;
+    }else{
+        banner.layer.borderColor = [UIColor clearColor].CGColor;
+        banner.layer.borderWidth = 0.0f;
+    }
     if (autoDisplay) {
         [self showBanner];
     }
