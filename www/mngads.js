@@ -1,3 +1,4 @@
+cordova.define("com.mngads.mngads-sdk-plugin.MngAdsSDK", function(require, exports, module) {
 var argscheck = require('cordova/argscheck'),
     utils = require('cordova/utils'),
     exec = require('cordova/exec');
@@ -49,11 +50,13 @@ MngAdsSDK.prototype.showInterstitial = function(successCallback, failureCallback
  *  @param: preferences: (gender, location, keyword...)
  *  @param: successCallback: this callback is called when banner did load
  *  @param: failureCallback: this callback is called when Factory failed to create banner (isBusy,worong placmentID,No ad,Timeout ...)
+ *  @param: border: True : banner with Border  or False :   without border
+
  */
-MngAdsSDK.prototype.createBanner = function(placementId,height,position,autoDisplay,preferences,successCallback, failureCallback) {
+MngAdsSDK.prototype.createBanner = function(placementId,height,position,autoDisplay,preferences,border,successCallback, failureCallback) {
     if (typeof(placementId) != 'string') placementId = '';
     if (typeof(preferences) != 'object') preferences = '';
-    exec(successCallback, failureCallback, this.serviceName, 'mngadssdk_createBanner', [placementId,height,position,autoDisplay,preferences]);
+    exec(successCallback, failureCallback, this.serviceName, 'mngadssdk_createBanner', [placementId,height,position,autoDisplay,preferences,border]);
 };
 
 MngAdsSDK.prototype.createInfeed = function(placementId,preferences,successCallback, failureCallback) {
@@ -89,3 +92,5 @@ MngAdsSDK.prototype.isInitialized = function(successCallback) {
 
 
 module.exports = MngAdsSDK;
+
+});
