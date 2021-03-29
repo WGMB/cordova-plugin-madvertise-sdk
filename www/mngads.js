@@ -1,4 +1,3 @@
-cordova.define("cordova-plugin-madvertise-sdk.MngAdsSDK", function(require, exports, module) {
 var argscheck = require('cordova/argscheck'),
     utils = require('cordova/utils'),
     exec = require('cordova/exec');
@@ -92,5 +91,3 @@ MngAdsSDK.prototype.isInitialized = function(successCallback) {
 
 
 module.exports = MngAdsSDK;
-
-});
