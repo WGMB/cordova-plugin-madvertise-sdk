@@ -9,9 +9,6 @@ android {
 
         // Enabling multidex support.
         multiDexEnabled true
-        ndk {
-            abiFilters "armeabi-v7a","x86"
-        }
     }
 
     dexOptions {
