@@ -33,7 +33,7 @@
                     <pod name="BlueStack-SDK/Google-Mobile-Ads-SDK" spec=">=3.2.0" />
                     <pod name="BlueStack-SDK/FlurryAds" spec=">=3.2.0" />
                     <pod name="BlueStack-SDK/mopub-ios-sdk" spec=">=3.2.0" />
-                    <pod name="BlueStack-SDK/AppLovinSDK" spec=">=3.2.0" />
+                    <!-- <pod name="BlueStack-SDK/AppLovinSDK" spec=">=3.2.0" /> -->
                     <pod name="BlueStack-SDK/OguryAds" spec=">=3.2.0" />
                     <pod name="BlueStack-SDK/Smart-Display-SDK" spec=">=3.2.0" />
                     <pod name="BlueStack-SDK/AmazonPublisherServicesSDK" spec=">=3.2.0" />
