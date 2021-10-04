@@ -52,13 +52,13 @@ repositories {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.gms:play-services-base:17.5.0'
-    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'com.madvertise:bluestack-core-sdk:3.3.3'
+    implementation 'com.google.android.gms:play-services-base:17.6.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.1'
+    implementation 'com.madvertise:bluestack-core-sdk:3.6.2'
     implementation 'com.android.support:multidex:1.0.3'
 
     // DFP SDK
-    implementation 'com.google.android.gms:play-services-ads:19.5.0'
+    implementation 'com.google.android.gms:play-services-ads:20.2.0'
 /*
     // Audience SDK
     implementation 'com.facebook.android:audience-network-sdk:6.2.0'
@@ -67,5 +67,6 @@ dependencies {
     implementation 'com.smartadserver.android:smart-display-sdk:7.6.2@aar'
     implementation 'com.smartadserver.android:smart-core-sdk:7.6.2@aar'
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
-    implementation 'com.google.android.exoplayer:exoplayer:2.11.0'*/
+    implementation 'com.google.android.exoplayer:exoplayer:2.11.0'
+*/
 }
