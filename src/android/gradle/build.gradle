@@ -22,7 +22,7 @@ android {
 
 
 repositories {
-        jcenter()
+        mavenCentral()
         flatDir{
             dirs '../app/src/main/libs'
         }
