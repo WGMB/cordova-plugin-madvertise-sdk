@@ -149,7 +149,7 @@ public class CDVMngAdsSDK extends CordovaPlugin implements
             switch (action) {
                 case ACTION_INITIALIZE:
 
-                    MNGAdsFactory.initialize(cordova.getActivity().getApplication(),
+                    MNGAdsFactory.initializeForCordova(cordova.getActivity().getApplication(),
                             options.optString(0));
 
                     mInitializationCallBack = callbackContext;
@@ -660,7 +660,7 @@ public class CDVMngAdsSDK extends CordovaPlugin implements
     }
 
     @Override
-    public void onMNGAdsSDKFactoryDidResetConfig() {
+    public void interstitialDidShown() {
 
     }
 
