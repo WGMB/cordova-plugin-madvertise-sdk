@@ -6,7 +6,7 @@
 
 #import "CDVMngAdsSDK.h"
 #import <Cordova/CDVViewController.h>
-#import "MNGPreference.h"
+#import <BlueStackSDK/MNGPreference.h>
 
 @implementation CDVMngAdsSDK{
     MNGAdsSDKFactory *interstitialAdsFactory;
