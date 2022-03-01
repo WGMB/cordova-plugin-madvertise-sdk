@@ -8,7 +8,7 @@
 #import <Cordova/CDVPlugin.h>
 
 // MngAds SDK
-#import "MNGAdsSDKFactory.h"
+#import  <BlueStackSDK/MNGAdsSDKFactory.h>
 
 
 @interface CDVMngAdsSDK : CDVPlugin<MNGAdsAdapterInterstitialDelegate,MNGAdsAdapterBannerDelegate,MNGClickDelegate,MNGAdsSDKFactoryDelegate>
