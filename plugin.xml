@@ -27,23 +27,16 @@
           </feature>
         </config-file>
         <podspec>
-              
                 <pods use-frameworks="true">
-                    <pod name="BlueStack-SDK" spec="4.0.0" />
+                    <pod name="BlueStack-SDK/MAdvertiseLocation" spec="4.0.0" />
+                    <pod name="BlueStack-SDK/Google-Mobile-Ads-SDK" spec="4.0.0" />
+                    <pod name="BlueStack-SDK/FBAudienceNetwork" spec="4.0.0" />
+                    <pod name="BlueStack-SDK/OguryAds" spec="4.0.0" />
+                    <pod name="BlueStack-SDK/AmazonPublisherServicesSDK" spec="4.0.0" />
+                    <pod name="BlueStack-SDK/FBAudienceNetwork" spec="4.0.0" />
+                    <pod name="BlueStack-SDK/CriteoPublisherSdk" spec="4.0.0" />
                 </pods>
-                
            </podspec>
-<!--        <framework src="BlueStack-SDK/MAdvertiseLocation" type="podspec" spec=">=3.2.0" />-->
-<!--        <framework src="BlueStack-SDK/Google-Mobile-Ads-SDK" type="podspec" spec=">=3.2.0" />-->
-<!--        <framework src="BlueStack-SDK/FlurryAds" type="podspec" spec=">=3.2.0" />-->
-<!--        <framework src="BlueStack-SDK/mopub-ios-sdk" type="podspec" spec=">=3.2.0" />-->
-<!--        <framework src="BlueStack-SDK/AppLovinSDK" type="podspec" spec=">=3.2.0" />-->
-<!--        <framework src="BlueStack-SDK/OguryAds" type="podspec" spec=">=3.2.0" />-->
-<!--        <framework src="BlueStack-SDK/Smart-Display-SDK" type="podspec" spec=">=3.2.0" />-->
-<!--        <framework src="BlueStack-SDK/AmazonPublisherServicesSDK" type="podspec" spec=">=3.2.0" />-->
-<!--        <framework src="BlueStack-SDK/FBAudienceNetwork" type="podspec" spec=">=3.2.0" />-->
-<!---->
-<!--        -->
         <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
             <dict>
                 <key>NSAllowsArbitraryLoads</key>
