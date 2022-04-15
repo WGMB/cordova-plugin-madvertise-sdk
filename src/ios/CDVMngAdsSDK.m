@@ -125,7 +125,7 @@
     interstitialAdsFactory.placementId = placementId;
     interstitialAdsFactory.clickDelegate = self;
     dispatch_async(dispatch_get_main_queue(), ^{
-        bool ok = [self->interstitialAdsFactory createInterstitialWithPreferences:[self preferencesWithString:pref]autoDisplayed:_autoDisplay];
+        bool ok = [self->interstitialAdsFactory createInterstitialWithPreferences:[self preferencesWithString:pref]autoDisplayed:_autoDisplay error:nil];
         if (!ok) {
             CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Fail to create"];
             [pluginResult setKeepCallbackAsBool:YES];
@@ -181,7 +181,7 @@
             self->banner = nil;
             self->bannerShowen = NO;
         }
-        bool ok = [self->bannerAdsFactory createBannerInFrame:frame withPreferences:[self preferencesWithString:pref]];
+        bool ok = [self->bannerAdsFactory createBannerInFrame:frame withPreferences:[self preferencesWithString:pref] error: nil];
         if (!ok) {
             CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Fail to create"];
             [pluginResult setKeepCallbackAsBool:YES];
