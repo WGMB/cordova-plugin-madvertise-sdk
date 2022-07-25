@@ -26,6 +26,10 @@ repositories {
         maven {  
             url 'https://packagecloud.io/smartadserver/android/maven2'  
         }
+        
+        // Optional: Huawei services dependencies repository
+        maven { url 'https://developer.huawei.com/repo/' }
+        
         flatDir{
             dirs '../app/src/main/libs'
         }
@@ -60,4 +64,7 @@ dependencies {
     
     //Smart Display SDK
     implementation 'com.smartadserver.android:smart-display-sdk:7.17.0'
+    
+    // Optional : add Smart support library for Huawei devices
+    implementation 'com.smartadserver.android:smart-core-sdk-huawei-support:1.0.0'
 }
