@@ -28,7 +28,15 @@
         </config-file>
         <podspec>
                 <pods use-frameworks="true">
-                    <pod name="BlueStack-SDK" spec="4.1.0" />
+                     <pod name="BlueStack-SDK" spec="4.1.0" />
+                     <pod name="BlueStack-SDK/MAdvertiseLocation" spec="4.1.0" />
+                     <pod name="BlueStack-SDK/Google-Mobile-Ads-SDK" spec="4.1.0" />
+                     <pod name="BlueStack-SDK/FBAudienceNetwork" spec="4.1.0" />
+                     <pod name="BlueStack-SDK/OguryAds" spec="4.1.0" />
+                     <pod name="BlueStack-SDK/AmazonPublisherServicesSDK" spec="4.1.0" />
+                     <pod name="BlueStack-SDK/FBAudienceNetwork" spec="4.1.0" />
+                     <pod name="BlueStack-SDK/CriteoPublisherSdk" spec="4.1.0" />
+                     <pod name="BlueStack-SDK/Smart-Display-SDK" spec="4.1.0" />
                 </pods>
            </podspec>
         <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
