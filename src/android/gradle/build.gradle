@@ -23,6 +23,9 @@ android {
 
 repositories {
         mavenCentral()
+        maven {  
+            url 'https://packagecloud.io/smartadserver/android/maven2'  
+        }
         flatDir{
             dirs '../app/src/main/libs'
         }
@@ -54,4 +57,7 @@ dependencies {
     // DFP SDK
     implementation 'com.google.android.gms:play-services-ads:20.4.0'
     implementation 'com.google.android.gms:play-services-ads-identifier:17.1.0'
+    
+    //Smart Display SDK
+    implementation 'com.smartadserver.android:smart-display-sdk:7.17.0'
 }
